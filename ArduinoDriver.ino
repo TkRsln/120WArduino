@@ -67,11 +67,9 @@ void startBlink(){
 ///////////////////////////////////////////////
 /////////////////////////////////[AKIM BÖLGESİ]
 /*
-          "ACS712ELCTR-05B-T",// for model use 0
-          "ACS712ELCTR-20A-T",// for model use 1
-          "ACS712ELCTR-30A-T"// for model use 2  
-sensitivity array is holding the sensitivy of the  ACS712
-current sensors. Do not change. All values are from page 5  of data sheet  
+          "ACS712ELCTR-05B-T",//  0
+          "ACS712ELCTR-20A-T",//  1
+          "ACS712ELCTR-30A-T"// 2  
 */
 
 float sensitivity = 0.066;// for ACS712ELCTR-30A-T
@@ -344,8 +342,6 @@ short degre_curent=0;
 short degre_value=0;
 
 short findDegre(){
-  //float gerilimDeger = (analogRead(A0)/1023.0)*5000;
-  // Gerilim değerini sıcaklık değerine dönüştürüyoruz.
   degre[degre_curent] = (short)( ((analogRead(pin_heat)/1023.0)*5000) / 10.0);
   degre_curent=(degre_curent+1)%10;
   int total=0;
